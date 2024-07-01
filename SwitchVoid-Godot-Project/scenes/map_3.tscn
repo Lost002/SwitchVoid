@@ -1,0 +1,378 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2eh2ybmmlsni"]
+
+[ext_resource type="Script" path="res://scenes/maps.gd" id="1_2103c"]
+[ext_resource type="PackedScene" uid="uid://b5q0gsxmtm5ic" path="res://scenes/player.tscn" id="2_j3p12"]
+[ext_resource type="PackedScene" uid="uid://d2pgxtneov547" path="res://scenes/next_level.tscn" id="3_p3amg"]
+[ext_resource type="AudioStream" uid="uid://d23huisfg6chw" path="res://assets/SFX/swap.wav" id="4_4t03m"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_wejlq"]
+size = Vector2(1000, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73b1o"]
+size = Vector2(1000, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_nq6mq"]
+size = Vector2(40, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucb1i"]
+size = Vector2(40, 10)
+
+[node name="map_3" type="Node2D"]
+script = ExtResource("1_2103c")
+
+[node name="floor" type="Node2D" parent="."]
+position = Vector2(100, 763)
+scale = Vector2(500, 5)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="floor"]
+modulate = Color(0.423083, 0, 0.00507753, 1)
+position = Vector2(3.2, 48)
+mesh = SubResource("QuadMesh_wejlq")
+
+[node name="death" type="StaticBody2D" parent="floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/death"]
+position = Vector2(-2.2, 48)
+shape = SubResource("RectangleShape2D_73b1o")
+
+[node name="p1" type="Node2D" parent="."]
+scale = Vector2(5, 5)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(49.1, 81.55)
+scale = Vector2(1.285, 0.850001)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D2"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(75.5, 77.6)
+scale = Vector2(0.125, 7.68)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D13"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D13/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D14" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(49.9, 41.1)
+scale = Vector2(1.405, 0.379999)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D14"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D14/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(-24.5, 134.225)
+scale = Vector2(0.685, 0.885)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D3"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(11.95, 143.012)
+scale = Vector2(1.1875, 1.1625)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D4"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(120.4, 149.2)
+scale = Vector2(1.13875, 0.561251)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D5"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D5/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(189.6, 52.2)
+scale = Vector2(1.13875, 0.561251)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D6"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D6/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(113.6, 6.19687)
+scale = Vector2(1.13875, 0.920626)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D8"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D8/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(-8.6, 13.2)
+scale = Vector2(1.13875, 0.920626)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D9"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D9/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(-13.85, -55.8984)
+scale = Vector2(0.2025, 8.74031)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D10"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D10/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D11" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(22.85, -100.2)
+scale = Vector2(2.0375, 0.72)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D11"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D11/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(86.6625, -110.1)
+scale = Vector2(0.196875, 4.86)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D12"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D12/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="p1"]
+modulate = Color(0.0627451, 0.0823529, 0.192157, 1)
+position = Vector2(225.6, 4.75156)
+scale = Vector2(0.219376, 7.55031)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p1/MeshInstance2D7"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p1/MeshInstance2D7/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="p2" type="Node2D" parent="."]
+scale = Vector2(5, 5)
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(-12, 96.4)
+scale = Vector2(0.641875, 0.620001)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D3"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(41.5812, 113)
+scale = Vector2(1.58094, 0.620001)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D4"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(48.4094, 81.65)
+scale = Vector2(1.24047, 0.829999)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D13"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D13/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D14" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(75.3047, 77.8)
+scale = Vector2(0.145234, 7.6)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D14"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D14/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D15" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(50.3047, 41.2)
+scale = Vector2(1.39523, 0.4)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D15"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D15/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(68.7812, 158.45)
+scale = Vector2(1.20094, 0.87)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D5"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D5/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(170.4, 114.4)
+scale = Vector2(0.180469, 11.955)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D6"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D6/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(199.8, 11.4875)
+scale = Vector2(0.180469, 4.1775)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D8"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D8/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(176.505, -6.65624)
+scale = Vector2(1.34523, 0.548751)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D9"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D9/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(194.648, -82.2281)
+scale = Vector2(4.28762, 1.11438)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D12"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D12/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(43.8, 21.9719)
+scale = Vector2(1.34523, 0.874375)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D10"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D10/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D11" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(-35.4, -52.8035)
+scale = Vector2(0.215, 14.1593)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D11"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D11/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="p2"]
+modulate = Color(0.0901961, 0.180392, 0.282353, 1)
+position = Vector2(149.2, 79.3469)
+scale = Vector2(0.180469, 8.06938)
+mesh = SubResource("QuadMesh_nq6mq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="p2/MeshInstance2D7"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p2/MeshInstance2D7/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ucb1i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.253734, 0.232303, 0.402391, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_j3p12")]
+position = Vector2(300, 325)
+
+[node name="finish" parent="." instance=ExtResource("3_p3amg")]
+position = Vector2(1000, -465)
+
+[node name="swap" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4t03m")
