@@ -9,3 +9,5 @@ If later revisions are made in the game the debug keys will be removed, right no
  - "+" zoom camera in
  - "-" zoom camera out
  - "Enter" skip to next level
+
+All builds are old and outdated
