@@ -7,9 +7,15 @@ const WALL_JUMP_PUSH_BACK = 400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var jump_dir = 1
 
 @onready var eyes = $eyes
-@onready var ray = $RayCast2D
+
+@onready var raydown = $raydown
+@onready var rayup = $rayup
+@onready var rayright = $rayright
+@onready var rayleft = $rayleft
+
 
 var initial_pos
 var maps = []
@@ -19,9 +25,12 @@ func _ready():
 	initial_pos = position
 
 func _physics_process(delta):
+
+	
 	if Input.is_action_just_pressed("toggle"):
 		gravity *= -1
-	
+		jump_dir *= -1
+		
 	if Input.is_action_just_pressed("left"):
 		eyes.position.x = lerp(eyes.position.x,-10.0,0.5)
 	elif Input.is_action_just_released("left"):
@@ -34,8 +43,8 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
-	if "death" in str(ray.get_collider()):
+		
+	if "deadly_tiles" in str(raydown.get_collider()) or "deadly_tiles" in str(rayup.get_collider()) or "deadly_tiles" in str(rayleft.get_collider()) or "deadly_tiles" in str(rayright.get_collider()):
 		position = initial_pos
 		die()
 		
@@ -43,8 +52,9 @@ func _physics_process(delta):
 		
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY - 50
+	if Input.is_action_just_pressed("jump") and is_on_floor() or Input.is_action_just_pressed("jump") and is_on_ceiling():
+		print(jump_dir)
+		velocity.y = (JUMP_VELOCITY - 50) * jump_dir
 		jump()
 	
 	elif Input.is_action_just_pressed("jump") and is_on_wall():
@@ -70,3 +80,4 @@ func jump():
 func die():
 	$die.pitch_scale = randf_range(0.9,1.1)
 	$die.play()
+
