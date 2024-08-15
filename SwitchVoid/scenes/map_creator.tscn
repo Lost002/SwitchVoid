@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj0qav01fte5h"]
+[gd_scene load_steps=13 format=3 uid="uid://bj0qav01fte5h"]
 
 [ext_resource type="Texture2D" uid="uid://cbge1vutlt6bg" path="res://assets/tiles/tiles-solid-blue.png" id="1_g2ras"]
+[ext_resource type="Script" path="res://scenes/tileswap.gd" id="1_ss8wg"]
 [ext_resource type="Texture2D" uid="uid://d00rbh6i1u3x0" path="res://assets/tiles/tiles-solid-purple.png" id="2_ujxuw"]
 [ext_resource type="PackedScene" uid="uid://d2pgxtneov547" path="res://scenes/next_level.tscn" id="3_6k4jd"]
 [ext_resource type="Texture2D" uid="uid://dkp6n0ib7byw6" path="res://assets/tiles/tiles-solid-death.png" id="3_v81ub"]
@@ -2721,6 +2722,7 @@ physics_layer_0/collision_layer = 3
 sources/0 = SubResource("TileSetAtlasSource_0iru5")
 
 [node name="map_creator" type="Node2D"]
+script = ExtResource("1_ss8wg")
 
 [node name="b" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_b1lon")
@@ -2735,5 +2737,17 @@ tile_set = SubResource("TileSet_p25es")
 format = 2
 
 [node name="finish" parent="." instance=ExtResource("3_6k4jd")]
+visible = false
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_xjovy")]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.288518, 0.288518, 0.288518, 1)

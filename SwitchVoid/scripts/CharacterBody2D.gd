@@ -15,19 +15,29 @@ var jump_dir = 1
 @onready var rayup = $rayup
 @onready var rayright = $rayright
 @onready var rayleft = $rayleft
+@onready var bg = $ColorRect
 
 
 var initial_pos
 var maps = []
 var load_map = 0
+var bgcol = "#1e002b"
+
+#bg.color = "#00052d"
+#bg.color = "#1e002b"
 
 func _ready():
+	bg.color = "#1e002b"
 	initial_pos = position
 
 func _physics_process(delta):
-
-	
 	if Input.is_action_just_pressed("toggle"):
+		if bgcol == "#1e002b":
+			bgcol = "#00052d"
+			bg.color = "#00052d"
+		else:
+			bgcol = "#1e002b"
+			bg.color = "#1e002b"
 		gravity *= -1
 		jump_dir *= -1
 		

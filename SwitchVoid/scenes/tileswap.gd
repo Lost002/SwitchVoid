@@ -2,7 +2,8 @@ extends Node2D
 
 @onready var tile1 = $b
 @onready var tile2 = $p
-@onready var player = $"../CharacterBody2D"
+@onready var player = $CharacterBody2D
+
 
 var tile1_vis = true # collision layer 1
 var tile2_vis = false # collision layer 2
